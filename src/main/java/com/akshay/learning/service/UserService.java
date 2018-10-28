@@ -21,7 +21,7 @@ public class UserService {
 
     public List<UserRepresentation> getUsers() {
         try {
-            String keycloakUserListEndpoint = "http://localhost:8282/admin/realms/SpringBoot/users";
+            String keycloakUserListEndpoint = "http://localhost:8282/auth/admin/realms/SpringBoot/users";
             ResponseEntity<UserRepresentation[]> response = keycloakRestTemplate.getForEntity(keycloakUserListEndpoint, UserRepresentation[].class);
             return Arrays.asList(response.getBody());
         } catch (RestClientException e) {
