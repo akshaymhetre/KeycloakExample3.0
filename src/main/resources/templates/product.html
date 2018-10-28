@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: headerFragment">
+</head>
+<body>
+<div id="container">
+    <h1>
+        Hello, <span th:text="${name}">--name--</span>.
+    </h1>
+    <div th:if="${products != null}">
+        <h1>Result</h1>
+        <ul>
+            <li th:each="item : ${products}" th:text="${item}"></li>
+        </ul>
+    </div>
+</div>
+<!-- container -->
+</body>
+</html>
